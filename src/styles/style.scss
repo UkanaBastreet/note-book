@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;1,100;1,300;1,400;1,600&display=swap");
+
+$header-height: 40px;
+
+%centered-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+// ============ my monitor problem
+html {
+  background-color: red;
+  padding-left: 4px;
+}
+// ============
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: $bg-white;
+  header {
+    height: $header-height;
+    display: flex;
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    align-items: center;
+    h1 {
+      text-transform: uppercase;
+      font-size: 1rem;
+      margin-left: 1rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    .burger {
+      margin-left: 10px;
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      > span {
+        margin: 2px;
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background-color: white;
+      }
+    }
+  }
+  main {
+    height: calc(100% - $header-height);
+    display: flex;
+    nav {
+      width: 290px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      border-right: $brd-color;
+      .create-new {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border-bottom: $brd-color;
+      }
+      .search {
+        height: 40px;
+        @extend %centered-flex;
+        background-color: white;
+        border-bottom: $brd-color;
+        input {
+          width: 80%;
+          height: 100%;
+        }
+      }
+      .panel {
+        height: 25px;
+        border-bottom: $brd-color;
+        display: flex;
+        justify-content: space-between;
+        .ellipses,
+        .sort {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          padding: 5px;
+          cursor: pointer;
+          width: 25px;
+          height: 25px;
+          @extend %centered-flex;
+          > span {
+            height: 2px;
+            background-color: #282d32;
+            // background-color: #858586;
+          }
+        }
+        .sort {
+          align-items: start;
+          :nth-child(1) {
+            width: 15px;
+          }
+          :nth-child(2) {
+            width: 10px;
+          }
+          :nth-child(3) {
+            width: 5px;
+          }
+        }
+        .ellipses {
+          > span {
+            width: 2px;
+            border-radius: 50%;
+          }
+        }
+      }
+      .notes-list {
+        background-color: white;
+        flex-grow: 3;
+        > p {
+          margin: 20px;
+        }
+      }
+    }
+    section {
+      position: relative;
+      width: 900px;
+      //   flex-grow: 3;
+      display: flex;
+      flex-direction: column;
+      border-right: $brd-color;
+      > .panel {
+        display: flex;
+        width: 100%;
+        height: 35px;
+        border-bottom: $brd-color;
+        font-size: 15px;
+        > .panel-item {
+          @extend %centered-flex;
+          padding: 0 10px;
+          cursor: pointer;
+          height: 35px;
+          &:hover {
+            background-color: #f1f1f1;
+          }
+        }
+      }
+      .title {
+        height: 50px;
+        background-color: white;
+        border-bottom: $brd-color;
+        display: flex;
+        .title-input {
+          flex-grow: 3;
+          height: 100%;
+          .input {
+            width: 100%;
+            padding: 0 20px;
+            font-weight: 500;
+            height: 100%;
+            font-size: 22px;
+          }
+        }
+        .delete-note {
+          cursor: pointer;
+          width: 50px;
+          height: 50px;
+          border-left: $brd-color;
+          @extend %centered-flex;
+        }
+      }
+      .textarea {
+        flex-grow: 3;
+        background-color: white;
+        .input{
+            padding: 24px;
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+        }
+      }
+      .nav {
+        height: 30px;
+        border-top: $brd-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+        > span {
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+      .unwrap {
+        cursor: pointer;
+        width: 10px;
+        position: absolute;
+        font-weight: bold;
+        right: -10px;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: $brd-color;
+        border-left: $brd-color;
+        &:hover {
+          background-color: #f1f1f1;
+        }
+      }
+    }
+  }
+}

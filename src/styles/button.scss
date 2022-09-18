@@ -1,0 +1,18 @@
+$btn-color: white;
+$btn-bg-color: #348efb;
+$btn-brd: 1px solid $btn-color;
+
+$active-btn-bg-color: #3288f0;
+
+.button {
+    cursor: pointer;
+  background-color: $btn-bg-color;
+  color: $btn-color;
+  outline: none;
+  border: $btn-brd;
+  padding: 10px 40px;
+  border-radius: 3px;
+  &:active{
+    background-color: $active-btn-bg-color;
+  }
+}
